@@ -1,0 +1,17 @@
+{
+  "itemdesc-arrow-rope": "Shoot to create a climbable rope. If used breaks down to its components when recovered.",
+  "item-arrow-rope-crude": "Crude Rope Arrow",
+  "item-arrow-rope-flint": "Flint Rope Arrow",
+  "item-arrow-rope-copper": "Copper Rope Arrow",
+  "item-arrow-rope-tinbronze": "Tin Bronze Rope Arrow",
+  "item-arrow-rope-bismuthbronze": "Bismuth Bronze Rope Arrow",
+  "item-arrow-rope-blackbronze": "Black Bronze Rope Arrow",
+  "item-arrow-rope-gold": "Gold Rope Arrow",
+  "item-arrow-rope-silver": "Silver Rope Arrow",
+  "item-arrow-rope-iron": "Iron Rope Arrow",
+  "item-arrow-rope-meteoriciron": "Meteoric Iron Rope Arrow",
+  "item-arrow-rope-steel": "Steel Rope Arrow",
+  "item-arrow-rope-obsidian": "Obsidian Rope Arrow",
+  "block-ropearrowanchor-*": "Rope Arrow",
+  "block-rope-*": "Climbable Rope"
+}
