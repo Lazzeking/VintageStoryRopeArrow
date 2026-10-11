@@ -1,13 +1,13 @@
 {
     "$schema": "https://moddbcdn.vintagestory.at/schema/modinfo.latest.json",
     "type": "Code",
-    "modid": "rope_arrow",
+    "modid": "ropearrow",
     "name": "Rope Arrow",
     "authors": [
         "Venseer"
     ],
     "description": "Adds a new item 'Rope Arrow' to the game. When shot, it creates a climbable rope.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "dependencies": {
         "game": "1.22.0"
     }
