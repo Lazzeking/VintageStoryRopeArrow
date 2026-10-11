@@ -35,8 +35,10 @@ public sealed class RopeArrowBehavior : EntityBehavior
         projectile.Collectible = false;
 
         BlockPos anchorPosition = entity.Pos.AsBlockPos;
+        BlockPos belowBlockCheck = anchorPosition.DownCopy();
         string facing = GetRopeFacing(entity);
-        if (entity.World.BlockAccessor.GetBlock(anchorPosition).BlockId != 0)
+        if (entity.World.BlockAccessor.GetBlock(anchorPosition).BlockId != 0 ||
+            entity.World.BlockAccessor.GetBlock(belowBlockCheck).BlockId != 0)
         {
             projectile.Collectible = true;
             finished = true;

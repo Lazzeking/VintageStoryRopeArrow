@@ -7,8 +7,8 @@
         "Venseer"
     ],
     "description": "Adds a new item 'Rope Arrow' to the game. When shot, it creates a climbable rope.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "dependencies": {
-        "game": ">=1.22.0 <=1.22.7"
+        "game": "1.22.0"
     }
 }
