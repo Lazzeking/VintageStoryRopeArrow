@@ -1,0 +1,34 @@
+{
+  "code": "ropearrowanchor",
+  "class": "RopeArrowAnchor",
+  "entityClass": "RopeArrowAnchor",
+  "variantgroups": [
+    { "code": "side", "loadFromProperties": "abstract/horizontalorientation" }
+  ],
+  "behaviors": [
+    { "name": "Ladder", "properties": { "isFlexible": true } }
+  ],
+  "drawtype": "json",
+  "shapebytype": {
+    "*-north": { "base": "rope_arrow:block/rope" },
+    "*-east": { "base": "rope_arrow:block/rope" },
+    "*-south": { "base": "rope_arrow:block/rope" },
+    "*-west": { "base": "rope_arrow:block/rope" }
+  },
+  "creativeinventory": { "general": [], "decorative": [] },
+  "blockmaterial": "Wood",
+  "replaceable": 500,
+  "lightAbsorption": 0,
+  "rainPermeable": true,
+  "climbable": true,
+  "sidesolid": { "all": false },
+  "sideopaque": { "all": false },
+  "sideAO": { "all": false },
+  "resistance": 1.25,
+  "sounds": {
+    "place": "game:block/planks",
+    "hit": "game:block/planks",
+    "break": "game:block/planks",
+    "walk": "game:walk/wood"
+  },
+}

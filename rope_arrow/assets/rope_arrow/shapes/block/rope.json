@@ -1,0 +1,26 @@
+{
+  "editor": {
+    "allAngles": false,
+    "entityTextureMode": false
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textures": {
+    "rope": "game:item/resource/rope"
+  },
+  "elements": [
+    {
+      "name": "CenteredRope",
+      "from": [7, 0, 7],
+      "to": [9, 16, 9],
+      "faces": {
+        "north": { "texture": "#rope", "uv": [0, 0, 2, 16] },
+        "east": { "texture": "#rope", "uv": [0, 0, 2, 16] },
+        "south": { "texture": "#rope", "uv": [0, 0, 2, 16] },
+        "west": { "texture": "#rope", "uv": [0, 0, 2, 16] },
+        "up": { "texture": "#rope", "uv": [0, 0, 2, 2] },
+        "down": { "texture": "#rope", "uv": [0, 0, 2, 2] }
+      }
+    }
+  ]
+}

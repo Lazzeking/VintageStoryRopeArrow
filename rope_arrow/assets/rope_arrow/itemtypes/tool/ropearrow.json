@@ -1,0 +1,56 @@
+{
+  "code": "arrow-rope",
+  "class": "RopeArrowItem",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": ["crude", "flint", "copper", "tinbronze", "bismuthbronze", "blackbronze", "gold", "silver", "iron", "meteoriciron", "steel", "obsidian"]
+    }
+  ],
+  "maxstacksize": 16,
+  "shape": { "base": "rope_arrow:item/ropearrow-icon" },
+  "texturesByType": {
+    "*-crude": { "icon": { "base": "rope_arrow:item/rope_arrow_crude" } },
+    "*-flint": { "icon": { "base": "rope_arrow:item/rope_arrow-flint" } },
+    "*-copper": { "icon": { "base": "rope_arrow:item/rope_arrow-copper" } },
+    "*-tinbronze": { "icon": { "base": "rope_arrow:item/rope_arrow-tinbronze" } },
+    "*-bismuthbronze": { "icon": { "base": "rope_arrow:item/rope_arrow-bismuthbronze" } },
+    "*-blackbronze": { "icon": { "base": "rope_arrow:item/rope_arrow-blackbronze" } },
+    "*-gold": { "icon": { "base": "rope_arrow:item/rope_arrow-gold" } },
+    "*-silver": { "icon": { "base": "rope_arrow:item/rope_arrow-silver" } },
+    "*-iron": { "icon": { "base": "rope_arrow:item/rope_arrow-iron" } },
+    "*-meteoriciron": { "icon": { "base": "rope_arrow:item/rope_arrow-meteoriciron" } },
+    "*-steel": { "icon": { "base": "rope_arrow:item/rope_arrow-steel" } },
+    "*-obsidian": { "icon": { "base": "rope_arrow:item/rope_arrow-obsidian" } }
+  },
+  "creativeinventory": {
+    "general": ["*"],
+    "items": ["*"]
+  },
+  "attributes": {
+    "arrowEntityCode": "rope_arrow:ropearrowprojectile",
+    "arrowEntityCodeByType": {
+      "*": "rope_arrow:ropearrowprojectile"
+    },
+    "damage": 0,
+    "damageByType": {
+      "*-crude": -0.1125,
+      "*-flint": -0.075,
+      "*-obsidian": -0.0375,
+      "*-copper": 0,
+      "*-tinbronze": 0.15,
+      "*-gold": 0.15,
+      "*-silver": 0.15,
+      "*-bismuthbronze": 0.15,
+      "*-blackbronze": 0.225,
+      "*-iron": 0.3,
+      "*-meteoriciron": 0.3375,
+      "*-steel": 0.375,
+      "*": 0
+    },
+    "breakChanceOnImpact": 0,
+    "breakChanceOnImpactByType": {
+      "*": 0
+    }
+  }
+}
