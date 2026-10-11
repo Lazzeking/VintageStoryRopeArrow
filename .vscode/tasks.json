@@ -9,7 +9,7 @@
                 "build",
                 "-c",
                 "Debug",
-                "${workspaceFolder}/rope_arrow/rope_arrow.csproj"
+                "${workspaceFolder}/RopeArrow/RopeArrow.csproj"
             ],
             "problemMatcher": "$msCompile"
         },

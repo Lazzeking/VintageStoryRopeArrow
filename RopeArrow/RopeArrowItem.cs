@@ -2,7 +2,7 @@ using System.Text;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 
-namespace rope_arrow;
+namespace RopeArrow;
 
 public sealed class RopeArrowItem : Item
 {

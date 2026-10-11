@@ -1,8 +1,8 @@
 ﻿using Vintagestory.API.Common;
 
-namespace rope_arrow;
+namespace RopeArrow;
 
-public class rope_arrowModSystem : ModSystem
+public class RopeArrowModSystem : ModSystem
 {
 	public override void Start(ICoreAPI api)
 	{

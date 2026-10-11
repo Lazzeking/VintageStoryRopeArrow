@@ -26,7 +26,8 @@ public static class Program
 
 public class BuildContext : FrostingContext
 {
-    public const string ProjectName = "rope_arrow";
+    public const string ProjectName = "RopeArrow";
+    public const string ProjectFileName = "RopeArrow.csproj";
     public string BuildConfiguration { get; }
     public string Version { get; }
     public string Name { get; }
@@ -74,14 +75,14 @@ public sealed class BuildTask : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        context.DotNetClean($"../{BuildContext.ProjectName}/{BuildContext.ProjectName}.csproj",
+        context.DotNetClean($"../{BuildContext.ProjectName}/{BuildContext.ProjectFileName}",
             new DotNetCleanSettings
             {
                 Configuration = context.BuildConfiguration
             });
 
 
-        context.DotNetPublish($"../{BuildContext.ProjectName}/{BuildContext.ProjectName}.csproj",
+        context.DotNetPublish($"../{BuildContext.ProjectName}/{BuildContext.ProjectFileName}",
             new DotNetPublishSettings
             {
                 Configuration = context.BuildConfiguration
