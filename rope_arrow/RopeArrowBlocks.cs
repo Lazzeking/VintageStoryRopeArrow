@@ -152,6 +152,11 @@ public sealed class BlockEntityRopeArrowAnchor : BlockEntity
     public bool HasArrowTransform { get; private set; }
     public IReadOnlyList<string> SourceArrowMaterials => sourceArrowMaterials;
 
+    public bool HasArrowEntity(long entityId)
+    {
+        return arrowEntityIds.Contains(entityId);
+    }
+
     public void SetArrowEntity(Entity arrow, string material)
     {
         if (arrowEntityIds.Contains(arrow.EntityId))
