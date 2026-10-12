@@ -10,6 +10,11 @@ namespace RopeArrow;
 
 public sealed class BlockRopeArrowRope : Block
 {
+    public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+    {
+        return false;
+    }
+
     public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
     {
         base.OnEntityCollide(world, entity, pos, facing, collideSpeed, false);
@@ -43,6 +48,11 @@ public sealed class BlockRopeArrowRope : Block
 
 public sealed class BlockRopeArrowAnchor : Block
 {
+    public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+    {
+        return false;
+    }
+
     public override void OnJsonTesselation(ref MeshData sourceMesh, ref int[] lightRgbsByCorner, BlockPos pos, Block[] chunkExtBlocks, int extIndex3d)
     {
         base.OnJsonTesselation(ref sourceMesh, ref lightRgbsByCorner, pos, chunkExtBlocks, extIndex3d);
@@ -131,7 +141,6 @@ public sealed class BlockRopeArrowAnchor : Block
 
 public sealed class BlockEntityRopeArrowAnchor : BlockEntity
 {
-    private const int MaxRopeLength = 12;
     private const int SegmentIntervalMs = 200;
 
     private readonly List<BlockPos> ropePositions = new();
@@ -311,7 +320,7 @@ public sealed class BlockEntityRopeArrowAnchor : BlockEntity
 
     private void OnUnspoolTick(float deltaTime)
     {
-        if (!unspooling || ropePositions.Count >= MaxRopeLength)
+        if (!unspooling || ropePositions.Count >= Math.Clamp(RopeArrowModSystem.Settings.MaxRopeLength, 1, 64))
         {
             StopUnspooling();
             return;
@@ -355,7 +364,8 @@ public sealed class BlockEntityRopeArrowAnchor : BlockEntity
             return;
         }
 
-        ReturnMaterialsOnBreak = HasAllRopeSegments();
+        ReturnMaterialsOnBreak = HasAllRopeSegments() &&
+            Api.World.Rand.NextDouble() * 100 < Math.Clamp(RopeArrowModSystem.Settings.RefundChancePercent, 0, 100);
         breakPrepared = true;
         StopUnspooling();
 
