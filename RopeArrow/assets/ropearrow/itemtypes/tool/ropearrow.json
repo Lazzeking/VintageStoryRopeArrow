@@ -1,0 +1,56 @@
+{
+  "code": "arrow-rope",
+  "class": "RopeArrowItem",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": ["crude", "flint", "copper", "tinbronze", "bismuthbronze", "blackbronze", "gold", "silver", "iron", "meteoriciron", "steel", "obsidian"]
+    }
+  ],
+  "maxstacksize": 16,
+  "shape": { "base": "ropearrow:item/ropearrow-icon" },
+  "texturesByType": {
+    "*-crude": { "icon": { "base": "ropearrow:item/rope-arrow-crude" } },
+    "*-flint": { "icon": { "base": "ropearrow:item/rope-arrow-flint" } },
+    "*-copper": { "icon": { "base": "ropearrow:item/rope-arrow-copper" } },
+    "*-tinbronze": { "icon": { "base": "ropearrow:item/rope-arrow-tinbronze" } },
+    "*-bismuthbronze": { "icon": { "base": "ropearrow:item/rope-arrow-bismuthbronze" } },
+    "*-blackbronze": { "icon": { "base": "ropearrow:item/rope-arrow-blackbronze" } },
+    "*-gold": { "icon": { "base": "ropearrow:item/rope-arrow-gold" } },
+    "*-silver": { "icon": { "base": "ropearrow:item/rope-arrow-silver" } },
+    "*-iron": { "icon": { "base": "ropearrow:item/rope-arrow-iron" } },
+    "*-meteoriciron": { "icon": { "base": "ropearrow:item/rope-arrow-meteoriciron" } },
+    "*-steel": { "icon": { "base": "ropearrow:item/rope-arrow-steel" } },
+    "*-obsidian": { "icon": { "base": "ropearrow:item/rope-arrow-obsidian" } }
+  },
+  "creativeinventory": {
+    "general": ["*"],
+    "items": ["*"]
+  },
+  "attributes": {
+    "arrowEntityCode": "ropearrow:ropearrowprojectile",
+    "arrowEntityCodeByType": {
+      "*": "ropearrow:ropearrowprojectile"
+    },
+    "damage": 0,
+    "damageByType": {
+      "*-crude": 0,
+      "*-flint": 0,
+      "*-obsidian": 0,
+      "*-copper": 0,
+      "*-tinbronze": 0.15,
+      "*-gold": 0.15,
+      "*-silver": 0.15,
+      "*-bismuthbronze": 0.15,
+      "*-blackbronze": 0.225,
+      "*-iron": 0.3,
+      "*-meteoriciron": 0.3375,
+      "*-steel": 0.375,
+      "*": 0
+    },
+    "breakChanceOnImpact": 0,
+    "breakChanceOnImpactByType": {
+      "*": 0
+    }
+  }
+}

@@ -19,10 +19,10 @@ public sealed class BlockRopeArrowRope : Block
     {
         int[] ropeBlockIds =
         {
-            world.GetBlock(new AssetLocation("rope_arrow:rope-north"))?.BlockId ?? -1,
-            world.GetBlock(new AssetLocation("rope_arrow:rope-east"))?.BlockId ?? -1,
-            world.GetBlock(new AssetLocation("rope_arrow:rope-south"))?.BlockId ?? -1,
-            world.GetBlock(new AssetLocation("rope_arrow:rope-west"))?.BlockId ?? -1
+            world.GetBlock(new AssetLocation("ropearrow:rope-north"))?.BlockId ?? -1,
+            world.GetBlock(new AssetLocation("ropearrow:rope-east"))?.BlockId ?? -1,
+            world.GetBlock(new AssetLocation("ropearrow:rope-south"))?.BlockId ?? -1,
+            world.GetBlock(new AssetLocation("ropearrow:rope-west"))?.BlockId ?? -1
         };
 
         BlockPos below = pos.DownCopy();
@@ -324,7 +324,7 @@ public sealed class BlockEntityRopeArrowAnchor : BlockEntity
             return;
         }
 
-        Block? ropeBlock = Api.World.GetBlock(new AssetLocation($"rope_arrow:rope-{ropeFacing}"));
+        Block? ropeBlock = Api.World.GetBlock(new AssetLocation($"ropearrow:rope-{ropeFacing}"));
         if (ropeBlock == null)
         {
             StopUnspooling();
@@ -359,7 +359,7 @@ public sealed class BlockEntityRopeArrowAnchor : BlockEntity
         breakPrepared = true;
         StopUnspooling();
 
-        int ropeBlockId = Api.World.GetBlock(new AssetLocation($"rope_arrow:rope-{ropeFacing}"))?.BlockId ?? -1;
+        int ropeBlockId = Api.World.GetBlock(new AssetLocation($"ropearrow:rope-{ropeFacing}"))?.BlockId ?? -1;
         foreach (BlockPos ropePosition in ropePositions)
         {
             if (Api.World.BlockAccessor.GetBlock(ropePosition).BlockId == ropeBlockId)
@@ -376,7 +376,7 @@ public sealed class BlockEntityRopeArrowAnchor : BlockEntity
 
     private bool HasAllRopeSegments()
     {
-        int ropeBlockId = Api.World.GetBlock(new AssetLocation($"rope_arrow:rope-{ropeFacing}"))?.BlockId ?? -1;
+        int ropeBlockId = Api.World.GetBlock(new AssetLocation($"ropearrow:rope-{ropeFacing}"))?.BlockId ?? -1;
         foreach (BlockPos ropePosition in ropePositions)
         {
             if (Api.World.BlockAccessor.GetBlock(ropePosition).BlockId != ropeBlockId)

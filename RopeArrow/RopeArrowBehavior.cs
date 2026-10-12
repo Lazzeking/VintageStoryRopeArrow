@@ -59,7 +59,7 @@ public sealed class RopeArrowBehavior : EntityBehavior
             return;
         }
 
-        Block? anchorBlock = entity.World.GetBlock(new AssetLocation($"rope_arrow:ropearrowanchor-{facing}"));
+        Block? anchorBlock = entity.World.GetBlock(new AssetLocation($"ropearrow:ropearrowanchor-{facing}"));
         if (anchorBlock == null)
         {
             finished = true;

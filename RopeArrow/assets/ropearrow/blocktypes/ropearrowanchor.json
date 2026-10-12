@@ -10,10 +10,10 @@
   ],
   "drawtype": "json",
   "shapebytype": {
-    "*-north": { "base": "rope_arrow:block/rope" },
-    "*-east": { "base": "rope_arrow:block/rope" },
-    "*-south": { "base": "rope_arrow:block/rope" },
-    "*-west": { "base": "rope_arrow:block/rope" }
+    "*-north": { "base": "ropearrow:block/rope" },
+    "*-east": { "base": "ropearrow:block/rope" },
+    "*-south": { "base": "ropearrow:block/rope" },
+    "*-west": { "base": "ropearrow:block/rope" }
   },
   "creativeinventory": { "general": [], "decorative": [] },
   "blockmaterial": "Wood",
