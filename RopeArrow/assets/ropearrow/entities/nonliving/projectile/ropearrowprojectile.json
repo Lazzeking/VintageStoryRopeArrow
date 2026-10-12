@@ -2,6 +2,12 @@
   "code": "ropearrowprojectile",
   "class": "EntityProjectile",
   "tags": ["inanimate", "projectile"],
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": ["crude", "flint", "copper", "tinbronze", "bismuthbronze", "blackbronze", "gold", "silver", "iron", "meteoriciron", "steel", "obsidian"]
+    }
+  ],
   "attributes": {
     "isProjectile": true
   },
@@ -20,8 +26,23 @@
     "size": 0.75,
     "renderer": "Shape",
     "shapeByType": {
+      "*-crude": { "base": "game:entity/nonliving/projectile/arrow/crude" },
+      "*-flint": { "base": "game:entity/nonliving/projectile/arrow/stone" },
+      "*-obsidian": { "base": "game:entity/nonliving/projectile/arrow/stone" },
+      "*-gold": { "base": "game:entity/nonliving/projectile/arrow/gold" },
+      "*-silver": { "base": "game:entity/nonliving/projectile/arrow/silver" },
+      "*": { "base": "game:entity/nonliving/projectile/arrow/copper" }
+    },
+    "texturesByType": {
+      "*-crude": {},
+      "*-flint": {
+        "material": { "base": "game:block/stone/flint" }
+      },
+      "*-obsidian": {
+        "material": { "base": "game:block/stone/rock/obsidian1" }
+      },
       "*": {
-        "base": "game:entity/nonliving/projectile/arrow/crude"
+        "material": { "base": "game:block/metal/ingot/{material}" }
       }
     },
     "behaviors": [

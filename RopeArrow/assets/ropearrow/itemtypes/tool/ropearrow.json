@@ -23,14 +23,18 @@
     "*-steel": { "icon": { "base": "ropearrow:item/rope-arrow-steel" } },
     "*-obsidian": { "icon": { "base": "ropearrow:item/rope-arrow-obsidian" } }
   },
+  "tpHandTransform": {
+    "translation": { "x": -1.05, "y": -0.4599, "z": -0.87 },
+    "rotation": { "x": 0, "y": 2, "z": 3 },
+    "scale": 0.55
+  },
   "creativeinventory": {
     "general": ["*"],
     "items": ["*"]
   },
   "attributes": {
-    "arrowEntityCode": "ropearrow:ropearrowprojectile",
     "arrowEntityCodeByType": {
-      "*": "ropearrow:ropearrowprojectile"
+      "*": "ropearrow:ropearrowprojectile-{material}"
     },
     "damage": 0,
     "damageByType": {
