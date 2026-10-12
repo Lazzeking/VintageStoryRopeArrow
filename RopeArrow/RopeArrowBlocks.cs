@@ -17,22 +17,57 @@ public sealed class BlockRopeArrowRope : Block
 
     public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
     {
-        int[] ropeBlockIds =
+        BlockPos? anchorPos = FindAnchorAbove(world, pos);
+        if (anchorPos != null && world.BlockAccessor.GetBlock(anchorPos) is BlockRopeArrowAnchor anchor)
         {
-            world.GetBlock(new AssetLocation("ropearrow:rope-north"))?.BlockId ?? -1,
-            world.GetBlock(new AssetLocation("ropearrow:rope-east"))?.BlockId ?? -1,
-            world.GetBlock(new AssetLocation("ropearrow:rope-south"))?.BlockId ?? -1,
-            world.GetBlock(new AssetLocation("ropearrow:rope-west"))?.BlockId ?? -1
-        };
-
-        BlockPos below = pos.DownCopy();
-        while (Array.IndexOf(ropeBlockIds, world.BlockAccessor.GetBlock(below).BlockId) >= 0)
-        {
-            world.BlockAccessor.SetBlock(0, below);
-            below.Y--;
+            anchor.OnBlockBroken(world, anchorPos, byPlayer, dropQuantityMultiplier);
+            ClearRopeColumn(world, pos);
+            return;
         }
 
+        ClearRopeColumn(world, pos);
         base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
+    }
+
+    private static BlockPos? FindAnchorAbove(IWorldAccessor world, BlockPos pos)
+    {
+        BlockPos scan = pos.UpCopy();
+        for (int i = 0; i < 16; i++)
+        {
+            Block block = world.BlockAccessor.GetBlock(scan);
+            if (block is BlockRopeArrowAnchor)
+            {
+                return scan.Copy();
+            }
+
+            if (block is not BlockRopeArrowRope)
+            {
+                return null;
+            }
+
+            scan.Up();
+        }
+
+        return null;
+    }
+
+    private static void ClearRopeColumn(IWorldAccessor world, BlockPos pos)
+    {
+        ClearRopes(world, pos.UpCopy(), 1);
+        ClearRopes(world, pos.DownCopy(), -1);
+        if (world.BlockAccessor.GetBlock(pos) is BlockRopeArrowRope)
+        {
+            world.BlockAccessor.SetBlock(0, pos);
+        }
+    }
+
+    private static void ClearRopes(IWorldAccessor world, BlockPos pos, int yStep)
+    {
+        while (world.BlockAccessor.GetBlock(pos) is BlockRopeArrowRope)
+        {
+            world.BlockAccessor.SetBlock(0, pos);
+            pos.Y += yStep;
+        }
     }
 
     public override ItemStack[] GetDrops(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
